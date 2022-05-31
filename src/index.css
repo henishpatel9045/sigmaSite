@@ -6,11 +6,13 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto";
+  color: rgba(0, 0, 0, .87);
 }
 
 body{
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 a{
@@ -19,4 +21,19 @@ a{
 
 :root{
   --transition: all .3s;
+  --color-primary: #00BCD4;
+  --color-primary-light: #B2EBF2;
+  --color-primary-dark: #00838F;
+  --color-secondary: #FFA000;
+  --color-secondary-light: #FFECB3;
+  --color-secondarydark: #FF6F00;
+  
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+section{
+  padding: .5rem 2rem;
 }
