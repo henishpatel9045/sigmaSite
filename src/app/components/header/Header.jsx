@@ -5,12 +5,8 @@ import BG1 from "../../assets/header-1.png";
 
 function Header() {
   return (
-    <>
-      <Box
-        id="home"
-        component={"section"}
-        sx={{ flexDirection: { xs: "column", md: "row" } }}
-      >
+    <section>
+      <Box id="home" sx={{ flexDirection: { xs: "column", md: "row" } }}>
         <Box className="header-content">
           <Typography variant="h3" gutterBottom className="header-title">
             Lorem ipsum dolor amet
@@ -52,7 +48,7 @@ function Header() {
           </Typography>
         </Box>
       </Box>
-    </>
+    </section>
   );
 }
 
