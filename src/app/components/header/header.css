@@ -8,23 +8,6 @@
 
 /* CONTENT */
 
-.header-title{
-    font-weight: bold !important;
-    overflow: hidden;
-    position: relative !important;
-}
-
-.header-title::before{
-    content: "" ;
-    position: absolute;
-    bottom: 0;  
-    width: 40%;
-    height: 1.5rem; 
-    left: 0;
-    z-index: -1;
-    background-color: var(--color-secondary-light);
-}   
-
 /* IMAGE */
 
 .header-img > img{

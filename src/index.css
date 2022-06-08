@@ -27,7 +27,7 @@ a{
   --color-secondary: #FFA000;
   --color-secondary-light: #FFECB3;
   --color-secondarydark: #FF6F00;
-  
+  --course-transition: all .5s;
 }
 
 ::-webkit-scrollbar{
@@ -38,3 +38,29 @@ section{
   padding: .5rem 2rem;
   margin-bottom: 4rem;
 }
+
+
+/* HEADINGS */
+
+.subtitle{
+    opacity: .6;
+    font-weight: 600 !important;
+}
+
+
+.header-title{
+    font-weight: bold !important;
+    overflow: hidden;
+    position: relative !important;
+}
+
+.header-title::before{
+    content: "" ;
+    position: absolute;
+    bottom: 0;  
+    width: 40%;
+    height: 1.5rem; 
+    left: 0;
+    z-index: -1;
+    background-color: var(--color-secondary-light);
+}   

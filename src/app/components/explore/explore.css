@@ -1,0 +1,142 @@
+.explore-wrapper{
+    margin-inline: 5rem;
+}
+
+.explore-wrapper>div{
+    margin-bottom: 2rem;
+}
+
+/* HAEDER */
+
+.section-header{
+    margin-bottom: 2rem;
+}
+
+.section-title{
+    font-weight: bold !important;
+    position: relative !important;
+}
+
+.section-title::after{
+    content: "";
+    position: absolute !important;
+    bottom: 0;
+    left: 0;
+    width: 8rem;
+    height: 1rem;   
+    background-color: var(--color-primary-light);
+    z-index: -1;
+}
+
+
+/* EXPLORE CONTAINER */
+
+.explore-course-container{
+    display: flex;  
+    flex-direction: column;
+    -webkit-column-gap: 1rem;   
+}
+
+.explore-course-wrapper{
+    background-color: #CCFABC;
+    width: 3.5rem;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    transform: rotate(-10deg);
+    transition: var(--course-transition);
+    overflow: hidden;
+}
+
+/* EXPLORE WITHOUT HOVER */
+
+.explore-course-title{
+    font-size: 1.2rem;
+    font-weight: 500;
+    height: 220px;
+    text-align: center;
+    color: #fff;
+    background-color: #FF6F00;
+    border-radius: 20px;
+    padding: .4rem;
+    writing-mode: vertical-lr;
+}
+
+.explore-course-card{
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: .4rem .8rem;
+
+}
+
+.explore-card-heading{
+    font-weight: bold;  
+    
+}
+
+.explore-card-img{
+    width: 150px;
+    align-self: center;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-content-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* EXPLORE HOVER */
+
+.explore-course-wrapper:hover{
+    transform: rotate(0deg);
+    transition: var(--course-transition);
+    width: 450px;
+    height: 250px;
+    background: transparent;
+    border: 2px solid #FF6F00;
+    margin-inline: 1rem;
+    /* animation: slideOpen forwards .5s; */
+}
+
+.explore-course-wrapper:hover > .explore-course-title{
+    display: none;
+    transition: var(--course-transition);
+}
+
+.explore-course-wrapper:hover > .explore-course-card{
+    display: grid;
+    grid-template-columns: 150px 230px;
+    column-gap: 30px;
+    transition: var(--course-transition);
+}
+
+/* ANIMATIONS */
+
+@keyframes slideOpen {
+    0%{
+        width: 3rem;
+        height: 250px;
+        background-color: #FF6F00;
+        border: none;
+        transform: rotate(-10deg);
+    }
+    25%{    
+        width: 3rem;
+        height: 250px;
+        background-color: #FF6F00;
+        border: none;
+        transform: rotate(0deg);
+    }
+    100%{
+        width: 500px;
+        height: 300px;
+        background-color: transparent;
+        border: 2px solid #FF6F00;
+        transform: rotate(0deg);
+    }
+}
