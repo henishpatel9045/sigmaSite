@@ -58,7 +58,6 @@
     height: 220px;
     text-align: center;
     color: #fff;
-    background-color: #FF6F00;
     border-radius: 20px;
     padding: .4rem;
     writing-mode: vertical-lr;
@@ -98,7 +97,7 @@
     width: 450px;
     height: 250px;
     background: transparent;
-    border: 2px solid #FF6F00;
+    border: 2px solid;
     margin-inline: 1rem;
     /* animation: slideOpen forwards .5s; */
 }

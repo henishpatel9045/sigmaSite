@@ -33,9 +33,22 @@ const data = [
   },
 ];
 
-const ExploreCard = ({ title, img, description }) => (
-  <div className="explore-course-wrapper">
-    <div className="explore-course-title">{title}</div>
+const colors = [
+  "FF6F00",
+  "FF8374",
+  "B45A1B",
+  "FFB300",
+  "C583FF",
+  "00A8FF",
+  "6DB4A7",
+  "308598",
+];
+
+const ExploreCard = ({ title, img, description, color }) => (
+  <div className="explore-course-wrapper" style={{ borderColor: color }}>
+    <div className="explore-course-title" style={{ backgroundColor: color }}>
+      {title}
+    </div>
     <div className="explore-course-card">
       <img src={img} className="explore-card-img" alt="" />
       <div
@@ -91,6 +104,7 @@ const ExploreCourse = ({ heading, data }) => (
             title={item.title}
             img={item.img}
             description={item.description}
+            color={"#" + colors[index % colors.length]}
           />
         )}
       />

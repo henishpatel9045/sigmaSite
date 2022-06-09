@@ -1,3 +1,4 @@
+import About from "./app/components/about/About";
 import Explore from "./app/components/explore/Explore";
 import Features from "./app/components/features/Features";
 import Header from "./app/components/header/Header";
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Features />
       <Explore />
+      <About />
     </>
   );
 }
