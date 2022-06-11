@@ -4,7 +4,7 @@ import "./util.css";
 
 function NavLink({ href, children }) {
   return (
-    <Link href={href} className="nav-link">
+    <Link href={href} className="nav-link" component={"div"}>
       {children}
     </Link>
   );

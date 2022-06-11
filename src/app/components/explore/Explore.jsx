@@ -45,7 +45,13 @@ const colors = [
 ];
 
 const ExploreCard = ({ title, img, description, color }) => (
-  <div className="explore-course-wrapper" style={{ borderColor: color }}>
+  <div
+    className="explore-course-wrapper"
+    style={{
+      borderColor: color,
+      transform: { md: "rotate(-10deg)", xs: "rotate(-90deg)" },
+    }}
+  >
     <div className="explore-course-title" style={{ backgroundColor: color }}>
       {title}
     </div>

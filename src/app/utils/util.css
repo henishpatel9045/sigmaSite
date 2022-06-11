@@ -2,24 +2,25 @@
 
 .nav-link{
     font-size: 1.2rem;
-    /* text-transform: uppercase; */
     overflow: hidden !important;
     position: relative;
     color: black !important;
     opacity: .87;
     font-weight: 500;
-    transition: all .3s;
+    text-decoration: none !important;
+    cursor: pointer;
 }
 
 .nav-link::before{
-    content: "" ;
+    content: "";
+    height: .7rem;
     position: absolute;
-    bottom: 0;  
-    /* border-radius: 5px; */
+    bottom: 0;
     left: 0;
     z-index: -1;
     transform: translateX(-100%);
     transition: all .3s;
+    background-color: var(--color-primary-light);
 }
 
 .nav-link:hover{
@@ -29,8 +30,6 @@
 
 .nav-link:hover::before{
     width: 70%;
-    height: .7rem;
-    background-color: var(--color-primary-light);
     transform: translateX(0);
     transition: all .3s;
 }
