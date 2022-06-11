@@ -41,7 +41,7 @@ const HeaderLink = ({ title, description, isSelected, handleClick }) => (
   </Button>
 );
 
-const HeaderCompo = ({ title, description, img }) => (
+const HeaderCompo = ({ title, description, img, pos }) => (
   <Box
     sx={{
       flexDirection: { xs: "column", md: "row" },
@@ -49,6 +49,9 @@ const HeaderCompo = ({ title, description, img }) => (
       alignItems: "center",
       justifyContent: "center",
       transition: "all .3s",
+      minWidth: "100vw",
+      position: "absolute",
+      left: pos,
     }}
   >
     <Box className="header-content">
@@ -66,7 +69,8 @@ const HeaderCompo = ({ title, description, img }) => (
 );
 
 function Header() {
-  const [selectedLink, setSelected] = useState(0);
+  const [selectedLink, setSelected] = useState(1);
+  const [positions, setPositions] = useState(["-200vw", "2rem", "200vw"]);
 
   return (
     <section>
@@ -78,11 +82,14 @@ function Header() {
           height: { md: "80vh", xs: "90vh" },
         }}
       >
-        <HeaderCompo
-          title={data[selectedLink].title}
-          description={data[selectedLink].description}
-          img={data[selectedLink].img}
-        />
+        {data.map((item, index) => (
+          <HeaderCompo
+            title={item.title}
+            description={item.description}
+            img={item.img}
+            pos={positions[index]}
+          />
+        ))}
       </Box>
       <Box
         sx={{ columnGap: { xs: ".6rem", md: "2rem" } }}
@@ -98,7 +105,20 @@ function Header() {
                 description={item.description}
                 isSelected={index == selectedLink}
                 handleClick={() => {
-                  setSelected(index);
+                  if (index != selectedLink) {
+                    let pos = [];
+                    positions.map(
+                      (ite, ind) =>
+                        (pos[ind] =
+                          ind == index
+                            ? "2rem"
+                            : ind < index
+                            ? "-200vw"
+                            : "200vw")
+                    );
+                    setPositions(pos);
+                    setSelected(index);
+                  }
                 }}
               />
               {index != data.length - 1 && (
